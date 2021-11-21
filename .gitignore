@@ -1,0 +1,9 @@
+poetry.lock
+__pycache__
+ignore
+.vscode
+build
+docs/build
+docs/doctrees
+docs/html
+.venv

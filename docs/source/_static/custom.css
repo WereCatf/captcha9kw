@@ -1,0 +1,15 @@
+.align-center figcaption p {
+	text-align: center;
+}
+
+.sphinxsidebarwrapper .globaltoc ul {
+	margin: 0;
+}
+
+.sphinxsidebarwrapper .globaltoc .welcome {
+	margin-top: 10px;
+}
+
+.simple li p {
+	margin: 0;
+}
