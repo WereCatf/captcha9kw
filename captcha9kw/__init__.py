@@ -6,5 +6,5 @@ else:
 
 __version__ = version(__package__)
 
-from .captcha9kw import api9kw
-__all__ = ["api9kw"]
+from .captcha9kw import api9kw, CaptchaError
+__all__ = ["api9kw", "CaptchaError"]

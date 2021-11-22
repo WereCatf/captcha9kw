@@ -71,6 +71,12 @@ errors = {
 }
 
 
+class CaptchaError(Exception):
+    """Exception raised in relation to captchas, like e.g. timeout.
+    """
+    pass
+
+
 class api9kw:
     """Class for accessing and using the 9kw.eu API.
 
@@ -560,6 +566,12 @@ class api9kw:
         str
             The answer or a zero-length string, if the answer is not 
             yet available.
+
+        Raises
+        ------
+        CaptchaError
+            Raised when a successfully submitted, active captcha times 
+            out or encounters an other error.
         """
         params = {"action": "usercaptchacorrectdata", "json": 1,
                   "id": id, "archiv": archive, "apikey": self.__api_key, "source": self.__name}
@@ -571,10 +583,10 @@ class api9kw:
                     if("answer" in results and results["answer"]):
                         return results["answer"]
                     if("try_again" in results and not results["try_again"]):
-                        raise RuntimeError(
-                            "Server tells us not to try querying for the captcha again.")
+                        raise CaptchaError(
+                            "Timeout waiting for answer to captcha.")
                     if("timeout" in results and results["timeout"]):
-                        raise RuntimeError(
+                        raise CaptchaError(
                             "Timeout waiting for answer to captcha.")
                     time.sleep(2)
             else:
