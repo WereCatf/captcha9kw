@@ -320,6 +320,18 @@ class api9kw:
                       "apikey": self.__api_key, "json": 1, key: value}
             self.__apiGet(params)
 
+    def captcha_cancel_submitted(self, id: int):
+        """Cancel the already-submitted captcha.
+
+        Parameters
+        ----------
+        id : int
+            ID of the captcha.
+        """
+        params = {"action": "usercaptchacorrectback", "json": 1,
+                  "id": id, "apikey": self.__api_key, "correct": 3, "source": self.__name}
+        self.__apiGet(params)
+
     def captcha_details(self, id: int, archive: int = 0) -> dict:
         """Query for details on a submitted captcha.
 
