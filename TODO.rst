@@ -7,3 +7,4 @@ TODO
   Many of the keys are complete nonsense and totally not 
   self-explanatory and the devs are *not* good at documenting things.
 - Add a CLI-application?
+- Find a replacement for ``gitchangelog``
