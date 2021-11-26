@@ -15,7 +15,6 @@ help:
 .PHONY: help Makefile
 
 rst:
-	gitchangelog > ../CHANGELOG.rst
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	sed -i 's#image:: _static#image:: docs/source/_static#' build/rst/*.rst
 	mv build/rst/index.rst ../README.rst
@@ -24,5 +23,4 @@ rst:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
-	gitchangelog > ../CHANGELOG.rst
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

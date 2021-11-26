@@ -2,6 +2,14 @@ Changelog
 =========
 
 
+v0.2.1 (2021-11-26)
+-------------------
+
+Documentation
+~~~~~~~~~~~~~
+- Attempt to fix RTD building the docs. [WereCatf]
+
+
 v0.2.0 (2021-11-26)
 -------------------
 
