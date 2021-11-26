@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+v0.2.0 (2021-11-26)
+-------------------
 
 Features
 ~~~~~~~~
@@ -20,6 +20,10 @@ Changes
 Documentation
 ~~~~~~~~~~~~~
 - Update TODO and adjust gitchangelog. [WereCatf]
+
+Other
+~~~~~
+- Prepare minor release. [WereCatf]
 
 
 v0.1.0 (2021-11-21)
