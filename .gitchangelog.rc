@@ -1,5 +1,8 @@
 tag_filter_regexp = r'^v[0-9]+\.[0-9]+(\.[0-9]+)?$'
 section_regexps = [
+    ('Chore', [
+        r'^[cC]ore\s*:\s*((dev|use?r|pkg|test|doc)\s*:\s*)?([^\n]*)$',
+     ]),
     ('Features', [
         r'^[nN]ew\s*:\s*((dev|use?r|pkg|test|doc)\s*:\s*)?([^\n]*)$',
         r'^[fF]eat\s*:\s*((dev|use?r|pkg|test|doc)\s*:\s*)?([^\n]*)$',
@@ -20,11 +23,10 @@ section_regexps = [
     ('Bugfix', [
         r'^[fF]ix\s*:\s*((dev|use?r|pkg|test|doc)\s*:\s*)?([^\n]*)$',
      ]),
-
     ('Other', None ## Match all lines
      ),
 ]
 
 subject_process = (strip |
-    ReSub(r'^([pP]erf|[sS]tyle|[dD]ocs|[rR]efactor|[fF]eat|[cC]hg|[fF]ix|[nN]ew)\s*:\s*((dev|use?r|pkg|test|doc)\s*:\s*)?([^\n@]*)(@[a-z]+\s+)*$', r'\4') |
+    ReSub(r'^([cC]hore|[pP]erf|[sS]tyle|[dD]ocs|[rR]efactor|[fF]eat|[cC]hg|[fF]ix|[nN]ew)\s*:\s*((dev|use?r|pkg|test|doc)\s*:\s*)?([^\n@]*)(@[a-z]+\s+)*$', r'\4') |
     SetIfEmpty("No commit message.") | ucfirst | final_dot)

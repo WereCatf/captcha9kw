@@ -123,6 +123,13 @@ API Reference
       :Type:
          str
 
+   **captcha_cancel_submitted(id: int)**
+
+      Cancel the already-submitted captcha.
+
+      :Parameters:
+         **id** (*int*) – ID of the captcha.
+
    **captcha_details(id: int, archive: int = 0) -> dict**
 
       Query for details on a submitted captcha.
@@ -326,6 +333,10 @@ API Reference
 
       :Return type:
          str
+
+      :Raises:
+         **CaptchaError** – Raised when a successfully submitted,
+         active captcha times     out or encounters an other error.
 
    **submit_image_captcha(data: Union[str, _io.BufferedReader],
    maxtimeout: int = 600, prio: int = 0, confirm: int = 0, selfsolve:

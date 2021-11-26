@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "captcha9kw"
-version = "0.1.0"
+version = "0.2.0"
 description = "A simple package for interacting with the 9kw.eu anti-captcha service."
 authors = ["WereCatf <werecatf@outlook.com>"]
 maintainers = ["WereCatf <werecatf@outlook.com>"]
